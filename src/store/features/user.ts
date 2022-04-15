@@ -1,20 +1,20 @@
-import { createSlice, PayloadAction, createAsyncThunk } from '@reduxjs/toolkit';
-import { RootState } from '@/store';
-import useSelectorHook from '@/store/useSelectorHook';
-import httpClient from '@/api/index';
-import { loginConfig } from '@/api/user/loginConfig';
-import { useDispatch } from 'react-redux';
+import { createSlice, PayloadAction, createAsyncThunk } from "@reduxjs/toolkit";
+import { RootState } from "@/store";
+import useSelectorHook from "@/store/useSelectorHook";
+import httpClient from "@/api/index";
+import { loginConfig } from "@/api/user/loginConfig";
+import { useDispatch } from "react-redux";
 
 type StateType = {
   id: string;
   password: string;
 };
 
-const name = 'user';
+const name = "user";
 
 const initialState: StateType = {
-  id: '',
-  password: '',
+  id: "",
+  password: "",
 };
 
 const reducers = {
@@ -27,8 +27,11 @@ const reducers = {
 // Thunck 정의
 const asyncThunk = {
   requestLogin: createAsyncThunk(
-    'requestLogin',
-    async (data: { id: string; password: string }, { rejectWithValue, dispatch }) => {
+    "requestLogin",
+    async (
+      data: { id: string; password: string },
+      { rejectWithValue, dispatch }
+    ) => {
       const response = await httpClient.request({
         ...loginConfig,
         data,
@@ -45,12 +48,8 @@ const asyncThunk = {
 };
 
 const extraReducer = {
-  loginFulFilled: (state: StateType, { payload }) => {
-    console.log('login success');
-  },
-  loginRejected: (state: StateType, { payload }) => {
-    console.log('login error');
-  },
+  loginFulFilled: (state: StateType, { payload }) => {},
+  loginRejected: (state: StateType, { payload }) => {},
 };
 
 // CreateSlice 정의

@@ -1,14 +1,14 @@
-import { useRef, useEffect } from 'react';
-import styled from '@emotion/styled';
-import { css } from '@emotion/react';
-import { MonoColor } from '@/constants/color';
-import { FontSize, LineHeight } from '@/constants/typography';
-import Button from '@/components/Button';
-import TextInput from '@/components/TextInput';
-import TextLabel from '@/components/Label';
-import { useDispatch } from 'react-redux';
-import { requestLogin } from '@/store/features/user';
-import { useNavigate } from 'react-router-dom';
+import { useRef, useEffect } from "react";
+import styled from "@emotion/styled";
+import { css } from "@emotion/react";
+import { MonoColor } from "@/constants/color";
+import { FontSize, LineHeight } from "@/constants/typography";
+import Button from "@/components/Button";
+import TextInput from "@/components/TextInput";
+import TextLabel from "@/components/Label";
+import { useDispatch } from "react-redux";
+import { requestLogin } from "@/store/features/user";
+import { useNavigate } from "react-router-dom";
 
 const Login = () => {
   const userIdRef = useRef<HTMLInputElement>(null);
@@ -23,13 +23,15 @@ const Login = () => {
   const onClickLogin = async () => {
     const userId = (userIdRef.current as HTMLInputElement).value;
     const password = (passwordRef.current as HTMLInputElement).value;
-    const data = await dispatch(requestLogin({ id: userId, password: password }));
-    console.log(data);
-    if (1) {
+    const data = await dispatch(
+      requestLogin({ id: userId, password: password })
+    );
+
+    if (true) {
       return;
     }
 
-    navigate('/home');
+    navigate("/home");
   };
 
   return (
