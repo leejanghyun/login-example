@@ -38,7 +38,7 @@ const asyncThunk = {
       });
 
       if (response instanceof Error) {
-        return rejectWithValue(false);
+        return false;
       }
 
       dispatch(setUserId({ id: data.id }));

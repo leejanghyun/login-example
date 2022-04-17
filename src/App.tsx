@@ -4,7 +4,7 @@ import { Global } from "@emotion/react";
 import { Provider } from "react-redux";
 import store from "@/store";
 import Routes from "@/routes";
-import GlobalCommon from "@/components/GlobalCommon";
+import Common from "@/components/Common";
 import globalStyle from "@/styles/globalStyle";
 import { css } from "@emotion/react";
 
@@ -19,7 +19,7 @@ function App() {
       <Global styles={globalStyles} />
       <div className="App">
         <Routes />
-        <GlobalCommon />
+        <Common />
       </div>
     </Provider>
   );

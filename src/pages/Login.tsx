@@ -9,25 +9,27 @@ import TextLabel from "@/components/Label";
 import { useDispatch } from "react-redux";
 import { requestLogin } from "@/store/features/user";
 import { useNavigate } from "react-router-dom";
+import { unwrapResult } from "@reduxjs/toolkit";
+import { AppThunkDispatch } from "@/store";
 
 const Login = () => {
   const userIdRef = useRef<HTMLInputElement>(null);
   const passwordRef = useRef<HTMLInputElement>(null);
-  const dispatch = useDispatch();
+  const dispatch = useDispatch<AppThunkDispatch>();
   const navigate = useNavigate();
 
-  useEffect(() => {}, []);
   /**
    * Login 버튼 클릭 시
    */
   const onClickLogin = async () => {
-    const userId = (userIdRef.current as HTMLInputElement).value;
+    const id = (userIdRef.current as HTMLInputElement).value;
     const password = (passwordRef.current as HTMLInputElement).value;
-    const data = await dispatch(
-      requestLogin({ id: userId, password: password })
+    const isSuccess = unwrapResult(
+      await dispatch(requestLogin({ id, password }))
     );
 
-    if (true) {
+    if (!isSuccess) {
+      alert("Invalid user");
       return;
     }
 
