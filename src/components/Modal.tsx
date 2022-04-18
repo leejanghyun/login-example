@@ -115,12 +115,14 @@ const CloseButton = styled.span`
 `;
 
 const ModalInner = styled.div`
+  display: flex;
+  justify-content: center;
   position: relative;
   box-shadow: 0 0 6px 0 rgba(0, 0, 0, 0.5);
   background-color: ${MonoColor.MONO_WHITE};
   border-radius: ${BorderRadius.PX_4};
-  width: 360px;
-  max-width: 480px;
+  width: 85%;
+  max-width: 85%;
   top: 50%;
   transform: translateY(-50%);
   margin: 0 auto;
