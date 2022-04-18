@@ -13,7 +13,11 @@ type LabelOptionProps = Partial<LabelProps>;
 /**
  * Text Label Component 정의
  */
-const TextLabel = ({ children, style, text = '' }: PropsWithChildren<LabelOptionProps>): ReactElement => {
+const TextLabel = ({
+  children,
+  style,
+  text = '',
+}: PropsWithChildren<LabelOptionProps>): ReactElement => {
   const Label = styled.label`
     ${LABEL_DEFAULT}
     ${style}

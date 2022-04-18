@@ -8,7 +8,7 @@ import { FontSize } from '@/constants/typography';
 const Error = () => {
   return (
     <Wrapper>
-      <div className="message">Error Page</div>
+      <div className='message'>Error Page</div>
     </Wrapper>
   );
 };

@@ -16,7 +16,12 @@ type ButtonOptionProps = Partial<ButtonProps>;
 /**
  * Button Component 정의
  */
-const Button = ({ children, onClick, style, type = 'button' }: PropsWithChildren<ButtonOptionProps>): ReactElement => {
+const Button = ({
+  children,
+  onClick,
+  style,
+  type = 'button',
+}: PropsWithChildren<ButtonOptionProps>): ReactElement => {
   const Button = styled.button`
     ${BUTTON_DEFAULT}
     ${style}

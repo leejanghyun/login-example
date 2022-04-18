@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from '@emotion/styled';
 import { MonoColor } from '@/constants/color';
+import { Opacity } from '@/constants/typography';
 
 /**
  * Loader Component 정의
@@ -22,7 +23,8 @@ const Wrapper = styled.div`
   bottom: 0;
   left: 0;
   right: 0;
-  background-color: rgba(0, 0, 0, 0.5);
+  background-color: ${MonoColor.MONO_BLACK};
+  opacity: ${Opacity.OPACITY_05};
   z-index: 10;
 `;
 

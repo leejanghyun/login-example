@@ -49,9 +49,24 @@ export const BorderRadius = {
   PX_20: '20px',
   PX_16: '16px',
   PX_12: '12px',
+  PX_10: '10px',
   PX_8: '8px',
   PX_4: '4px',
   PX_0: 0,
 } as const;
+
+export const Opacity = {
+  OPACITY_00: 0,
+  OPACITY_01: 0.1,
+  OPACITY_02: 0.2,
+  OPACITY_03: 0.3,
+  OPACITY_04: 0.4,
+  OPACITY_05: 0.5,
+  OPACITY_06: 0.6,
+  OPACITY_07: 0.7,
+  OPACITY_08: 0.8,
+  OPACITY_09: 0.9,
+  OPACITY_10: 1,
+};
 
 export type BorderRadiusValue = ObjectValue<typeof BorderRadius>;

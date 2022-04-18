@@ -9,7 +9,7 @@ import Loader from '@/components/Loader';
 const Loading = () => {
   return (
     <Wrapper>
-      <div className="message">Loading...</div>
+      <div className='message'>Loading...</div>
       <Loader></Loader>
     </Wrapper>
   );
